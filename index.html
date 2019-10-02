@@ -6,8 +6,16 @@
 
 <body>
 The content of the document......
+<input type="text" oninput="getSearchInput()" id="search"/>
 <script src="polyfills/bind.js"></script>
 <script src="polyfills/array.js"></script>
+<script src="polyfills/debouncing.js"></script>
+<script>
+    function getSearchInput() {
+        var str = document.getElementById('search').value;
+        method(str);
+    }
+</script>
 </body>
 
 </html> 

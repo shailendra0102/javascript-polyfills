@@ -81,11 +81,8 @@ Array.prototype.mySort = function(cb = (a,b) => a-b ) {
     return arr;
 }
 
-// var sortedArray = arr.mySort(callBack);
-// console.log(sortedArray);
-
-var arr = [10,9,5,2,1,4,15];
-console.log(arr.mySort());
+var sortedArray = arr.mySort(callBack);
+console.log(sortedArray);
 
 // Array.reduce
 
@@ -112,4 +109,4 @@ Array.prototype.myReduce = function(cb, startVal) {
 }
 
 var output = arr.myReduce(reducerFn);
-console.log(output);								
+console.log(output);
