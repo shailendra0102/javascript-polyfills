@@ -86,3 +86,30 @@ Array.prototype.mySort = function(cb = (a,b) => a-b ) {
 
 var arr = [10,9,5,2,1,4,15];
 console.log(arr.mySort());
+
+// Array.reduce
+
+var reducerFn = function(accumulator, currentValue, currentIndex, array) {
+    accumulator = accumulator+currentValue;
+    return accumulator;
+}
+
+var arr = [1,2,3,4,5,6,7,8];
+
+var output = arr.reduce(reducerFn,10);
+console.log(output);
+
+// Polyfill for Array.reduce
+
+Array.prototype.myReduce = function(cb, startVal) {
+    var arr = this;
+    var i =0;
+    var accumulator = startVal ? startVal : arr[i++];
+    for(i; i<arr.length; i++) {
+        accumulator = cb.call(null,accumulator,arr[i],i,arr);
+    }
+    return accumulator;
+}
+
+var output = arr.myReduce(reducerFn);
+console.log(output);								
