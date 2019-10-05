@@ -7,9 +7,11 @@
 <body>
 The content of the document......
 <input type="text" oninput="getSearchInput()" id="search"/>
+<input type="button" value="Throttle" onclick="throttledFn(Math.random())" />
 <script src="polyfills/bind.js"></script>
 <script src="polyfills/array.js"></script>
 <script src="polyfills/debouncing.js"></script>
+<script src="polyfills/throttling.js"></script>
 <script>
     function getSearchInput() {
         var str = document.getElementById('search').value;
